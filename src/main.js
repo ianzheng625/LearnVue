@@ -1,8 +1,18 @@
 import Vue from 'vue'
 import App from './App.vue'
+import axios from 'axios'
+import router from './router.js';
+import iView from 'iview';
 
-Vue.config.productionTip = false
+Vue.use(iView);
+
+axios.defaults.withCredentials=true;
+// Vue.prototype.$axios = axios;
+Vue.prototype.$http = axios;
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  router,
+  render: h => h(App)
+});
