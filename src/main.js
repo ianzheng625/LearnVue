@@ -2,9 +2,6 @@ import Vue from 'vue'
 import App from './App.vue'
 import axios from 'axios'
 import router from './router.js';
-import iView from 'iview';
-
-Vue.use(iView);
 
 axios.defaults.withCredentials=true;
 // Vue.prototype.$axios = axios;

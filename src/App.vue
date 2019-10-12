@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <menu-left></menu-left>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+
+import MenuLeft from './components/menu/menu.vue'
+
   export default {
     name: 'app',
-    data () {
-      return {
-      }
+    components: {
+      'menu-left': MenuLeft,
     }
   }
 </script>

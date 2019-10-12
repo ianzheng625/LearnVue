@@ -10,7 +10,7 @@ const routes = [
   ...allRoutes,
   {
     path: '*',
-    hidden: true,
+    // hidden: true,
     redirect: { path: '/' }
   }
 ];

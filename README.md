@@ -1,7 +1,5 @@
 # learnvue
 
-> 郑森益是有钱人，真的特别有钱，有好多钱，家里是开地铁的
-
 ## Project setup
 ```
 npm install
