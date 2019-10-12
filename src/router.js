@@ -2,23 +2,16 @@ import Vue from 'vue'
 
 import VueRouter from 'vue-router'
 
+const req = require.context('./components', true, /route\.js?$/);
+const allRoutes = [].concat(...req.keys().map(k => req(k).default));
 Vue.use(VueRouter);
 
-const routes = [{
-    path: '/',
-    component: resolve => require(['./components/Login.vue'], resolve),
-    props: { name: 'next' },
-    name:'login',
-    hidden: true
-  },{
-    path: '/index',
-    component: resolve => require(['./components/main/Index.vue'], resolve),
-    name: 'index',
-    leaf: true//只有一个节点
-  },{
+const routes = [
+  ...allRoutes,
+  {
     path: '*',
     hidden: true,
-    redirect: { path: '/login' }
+    redirect: { path: '/' }
   }
 ];
 
