@@ -1,7 +1,7 @@
 <template>
-  <div id="index">
-    <div class="">
-      <p>Hello Gold Jin! This background color is for you!</p>
+  <div id="index" class="c-content">
+    <div>
+      <p></p>
     </div>
   </div>
 </template>
@@ -15,7 +15,6 @@
 <style>
   #index{
     text-align: center;
-    padding-top: 30px
   }
   p{
     font-size: 30px

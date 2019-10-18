@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <menu-left></menu-left>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+
+import MenuLeft from './components/menu/menu.vue'
+
   export default {
     name: 'app',
-    data () {
-      return {
-      }
+    components: {
+      'menu-left': MenuLeft,
     }
   }
 </script>
@@ -18,9 +21,10 @@
   *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   body{
-      background-color: #ffcc3b;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
   }
   .btn{
     text-decoration: none;
@@ -43,11 +47,28 @@
   .btn--blue{
     color: #fff;
     background-color: #5e5e7d;
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1em;
+  }
+  .btn--pink{
+    color: #fff;
+    background-color: #ff5f5f;
+    font-size: 16px;
     line-height: 1em;
   }
   .btn--blue:hover {
     color: #5e5e7d;
     background-color: #fff;
+  }
+  .btn--pink:hover {
+    color: #ff5f5f;
+    background-color: #fff;
+  }
+  .c-content{
+    background-color: #ecf1f5;
+    width: calc(100% - 250px);
+    float: right;
+    position: relative;
+    min-height: 100vh;
   }
 </style>
