@@ -2,8 +2,13 @@
   <div id="navMenu" v-if="checkPage">
     <div class="menu_left">
       <div class='menu_user'>
-        <div class="menu__logo">
-          <img v-bind:src="user.logo.imgPath" v-bind:alt="user.logo.title">
+        <div class="menu_logo">
+          <img :src="user.logo.imgPath" :alt="user.logo.title">
+        </div>
+        <div class="menu_name">{{ user.name }}</div>
+        <div class="menu_location">
+          <span>{{ user.location.name }}</span>
+          <img :src="user.location.imgPath" :alt="user.location.name">
         </div>
       </div>
       <ul>
@@ -27,13 +32,13 @@
         ],
         user: {
           logo: {
-            imgPath: '../../assets/img/logo.jpg',
+            imgPath: require('../../assets/img/logo.jpg'),
             title: 'logo'
           },
           name: 'Ian Zheng',
           location: {
             name: 'China',
-            imgPath: ''
+            imgPath: require('../../assets/img/China-Flag.png')
           }
         }
       }
@@ -63,6 +68,33 @@
   }
   .menu_user{
     width: 100%;
+    padding: 70px 0;
+    background: linear-gradient(to bottom left , #c2d6e6, #ef5267);
+  }
+  .menu_logo{
+    margin: 0px auto 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50% 50%;
+    overflow: hidden;
+  }
+  .menu_logo img{
+    display: block;
+    width: 100%;
+  }
+  .menu_name, .menu_location{
+    text-align: center;
+    color: white;
+    line-height: 1.5em;
+  }
+  .menu_location span{
+    vertical-align: middle;
+  }
+  .menu_location img{
+    display: inline-block;
+    width: 19px;
+    vertical-align: middle;
+    margin-left: 5px;
   }
   .menu_left ul li a{
     font-size: 15px;
