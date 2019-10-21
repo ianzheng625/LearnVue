@@ -13,7 +13,7 @@
       </div>
       <ul>
         <li v-for="item in items" :key="item.id">
-          <router-link :to="item.url">{{ item.text }}</router-link>
+          <router-link :to="item.url"><i :class="item.icon"></i><span>{{ item.text }}</span></router-link>
         </li>
       </ul>
     </div>
@@ -27,18 +27,18 @@
     data(){
       return{
         items: [
-          { id: 1, url: '/index', text: 'Fun1' },
-          { id: 2, url: '/aaa', text: 'Fun2' }
+          { id: 1, url: '/index', text: 'Fun1', icon: 'fa fa-forward' },
+          { id: 2, url: '/aaa', text: 'Fun2', icon: 'fa fa-forward' }
         ],
         user: {
           logo: {
-            imgPath: require('../../assets/img/logo.jpg'),
+            imgPath: 'img/logo.jpg',
             title: 'logo'
           },
           name: 'Ian Zheng',
           location: {
             name: 'China',
-            imgPath: require('../../assets/img/China-Flag.png')
+            imgPath: 'img/China-Flag.png'
           }
         }
       }
@@ -70,6 +70,7 @@
     width: 100%;
     padding: 70px 0;
     background: linear-gradient(to bottom left , #c2d6e6, #ef5267);
+    height: 308px;
   }
   .menu_logo{
     margin: 0px auto 20px;
@@ -96,12 +97,27 @@
     vertical-align: middle;
     margin-left: 5px;
   }
+  .menu_left ul{
+    overflow: auto;
+    height: calc(100vh - 308px);
+  }
+  .menu_left ul::-webkit-scrollbar{
+    width: 3px;
+  }
+  .menu_left ul::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: #d894a6;
+  }
+  .menu_left ul::-webkit-scrollbar-track{
+    border-radius: 0;
+    background: #d9e1e8;
+  }
   .menu_left ul li a{
     font-size: 15px;
     color: #707070;
     line-height: 28px;
     display: block;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 16px;
     position: relative;
     cursor: pointer;
     transition: all 0.3s;
@@ -117,5 +133,8 @@
   .menu_left ul li a.router-link-active{
     color: #eb4158;
     border-left: 3px solid #eb4158;
+  }
+  .menu_left ul li a i{
+    margin-right: 10px;
   }
 </style>
